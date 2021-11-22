@@ -172,12 +172,31 @@
 
 > 
 
+#### Iremos utilizar agora o gráfico de Boxplot, no qual ira mostrar o valor máximo, médio e mínimo.
+
+---
+Primeiro iremos importar a biblioteca "seaborn".
+
+No comando ``` sns.boxplot ```
+
+Iremos definir os eixos da tabela. No eixo **Y** iremos passar o "total" e no eixo **X** "city", o **Data** iremos passar as informações, **Width** o tamanho da coluna e **Palette** define que o boxplot ira ser colorido.
+
 ![](images/print29Seasborn.png) 
+
+Podemos notar que os valores de Belo Horizonte alguns valores acima do comum dificultando a visualização do gráfico.
+Iremos remover eles de nossa consulta com o comando: ```df_bh = df_1[(df_1[''city]=='Belo Horizonte') & (df_1['total (R$)']<1000000)]```
+
+Podemos notar que os valores acima de "1000000" não fazem mais parte de nossa consulta.
+
+Após isso podemos chamar nosso boxplot novamente utilizando ```data=df_bh```. Podemos notar com maior clareza agora como os dados estão distribuídos em Belo Horizonte.
 
 > 
 
 ![](images/print30Seasborn2.png) 
 
 > 
+
+Podemos realizar a exportação do dataframe que estamos editando com o seguinte comando ```df.to_csv('caminho\onde\salvar\nome.csv')```
+Neste exemplo iremos exportar o arquivo em formato **csv**.
 
 ![](images/print31Exportar.png) 
